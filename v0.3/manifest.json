@@ -1,0 +1,32 @@
+{
+  "manifest_version": 3,
+  "name": "Block Word",
+  "version": "0.3",
+  "description": "Demande une confirmation avant de charger le document dans google doc. Cela permet d'éviter de casser les trames du tutorat",
+    
+  "permissions": [
+    "declarativeNetRequestWithHostAccess",
+    "webRequest",
+    "storage"
+  ],
+  "host_permissions": [
+    "https://docs.google.com/document/*"
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": ["confirm.html"],
+      "matches": ["<all_urls>"]
+    }
+  ],
+  "icons": {
+       "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png" 
+  },
+
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  }
+}

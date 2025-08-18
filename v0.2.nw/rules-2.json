@@ -1,0 +1,18 @@
+[
+  {
+    "id": 1,
+    "priority": 1,
+    "action": {
+        "type": "redirect",
+        "redirect": {
+        "regexSubstitution": "https://blocking.html\\1"
+        }
+    },
+    "condition": {
+        "regexFilter": "^https://docs\\.google\\.com/document/d/(.*)",
+        "resourceTypes": [
+        "main_frame"
+        ]
+    }
+  }
+]

@@ -1,0 +1,36 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Confirmation requise</title>
+  <link rel="stylesheet" href="confirm.css" />
+  <style>
+    /* Fallback si confirm.css absent */
+    :root { font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif; }
+    body { margin: 0; display: grid; place-items: center; min-height: 100vh; background: #f6f7f9; }
+    .card { background: white; max-width: 640px; padding: 24px; border-radius: 16px; box-shadow: 0 2px 20px rgba(0,0,0,0.12); }
+    h1 { font-size: 1.25rem; margin: 0 0 8px; }
+    p { margin: 8px 0 16px; line-height: 1.5; }
+    code { background: #f0f0f0; padding: 2px 6px; border-radius: 6px; word-break: break-all; }
+    .actions { display: flex; gap: 12px; margin-top: 16px; }
+    button { border: 0; padding: 10px 16px; border-radius: 10px; cursor: pointer; }
+    .primary { background: #1a73e8; color: #fff; }
+    .secondary { background: #e8eaed; }
+  </style>
+</head>
+<body>
+  <div class="card">
+    <h1>Voulez-vous vraiment ouvrir ce site&nbsp;?</h1>
+    <p>Vous êtes sur le point d’ouvrir : <br /><strong><code id="url"></code></strong></p>
+    <p>Par mesure de prudence, cette extension vous demande de confirmer.</p>
+    <div class="actions">
+      <button id="continue" class="primary">Continuer</button>
+      <button id="cancel" class="secondary">Annuler</button>
+    </div>
+  </div>
+
+  <p id="DOCUMENT-ID" style="display:none"></p>
+  <script src="blocking.js"></script>
+</body>
+</html>

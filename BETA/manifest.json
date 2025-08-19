@@ -1,30 +1,34 @@
 {
   "manifest_version": 3,
   "name": "Block G-Doc",
-  "version": "0.6",
-  "description": "Demande une confirmation avant d'afficher un Google Doc.",
+  "version": "0.5",
+  "description": "Demande une confirmation avant de charger le document dans google doc. Cela permet d'éviter de casser les trames du tutorat",
     
-  "permissions": [],
+  "permissions": [
+    "tabs"
+  ],
+  
   "host_permissions": [
     "https://docs.google.com/document/*"
   ],
-  "web_accessible_resources": [
-    {
-      "resources": ["confirm.html", "confirm.css", "confirm.js"],
-      "matches": ["<all_urls>"]
-    }
-  ],
+
   "icons": {
-    "16": "icons/icon16.png",
-    "32": "icons/icon32.png",
-    "48": "icons/icon48.png",
-    "128": "icons/icon128.png"
+       "16": "icons/icon16.png",
+        "32": "icons/icon32.png",
+        "48": "icons/icon48.png",
+        "128": "icons/icon128.png" 
   },
+
   "content_scripts": [
     {
       "matches": ["https://docs.google.com/document/*"],
       "js": ["content-blocker.js"],
       "run_at": "document_start"
     }
-  ]
+  ],
+  
+  "background": {
+    "service_worker": "service_worker.js",
+    "type": "module"
+  }
 }

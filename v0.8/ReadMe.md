@@ -1,4 +1,4 @@
-# OUVRIR DANS WORD!!! v0.7
+# OUVRIR DANS WORD!!! v0.8
 _19/08/2025_ 
 
 Mathis KREMER (UE3) 
